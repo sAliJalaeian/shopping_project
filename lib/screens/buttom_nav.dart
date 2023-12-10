@@ -23,6 +23,12 @@ class _BottomNavState extends State<BottomNav> {
   ];
   int selectedIndex = 0;
 
+  void _onItemTapped(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(      
@@ -44,6 +50,7 @@ class _BottomNavState extends State<BottomNav> {
                         isSelectedWatches = true;
                         isSelectedMacbooks = false;
                         isSelectedIphones = false;
+                        selectedIndex = 0;
                       });
                     },
                     child: Transform.rotate(
@@ -79,6 +86,7 @@ class _BottomNavState extends State<BottomNav> {
                         isSelectedWatches = false;
                         isSelectedMacbooks = false;
                         isSelectedIphones = true;
+                        selectedIndex = 1;
                       });
                     },
                     child: Transform.rotate(
@@ -114,6 +122,7 @@ class _BottomNavState extends State<BottomNav> {
                         isSelectedWatches = false;
                         isSelectedMacbooks = true;
                         isSelectedIphones = false;
+                        selectedIndex = 2;
                       });
                     },
                     child: Transform.rotate(
@@ -144,6 +153,15 @@ class _BottomNavState extends State<BottomNav> {
               ],
             ),
           ),
+          Column(
+            children: [
+              Container(
+                height: MediaQuery.sizeOf(context).height,
+                width: MediaQuery.sizeOf(context).width * 75 / 100,
+                child: myPages[selectedIndex],
+              )
+            ],
+          )
         ],
       ),
     );

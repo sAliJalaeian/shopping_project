@@ -10,7 +10,7 @@ class MacBookPage extends StatelessWidget {
       children: [
         Center(
           child: Text(
-            "IPhone Page",
+            "Macbook Page",
             style: TextStyle(
               fontSize: 40,
               fontWeight: FontWeight.bold
