@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shopping_project/bloc/product_bloc.dart';
+import 'package:shopping_project/services/product_service.dart';
 
 import 'screens/buttom_nav.dart';
 
@@ -11,9 +14,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BottomNav(),
+      home: BlocProvider(
+        create: (context) => ProductBloc(productService: ProductService())..add(FetchProductEvent()),
+        child: const BottomNav(),
+      ),
     );
   }
 }

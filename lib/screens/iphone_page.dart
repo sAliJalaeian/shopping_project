@@ -5,19 +5,52 @@ class IphonePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Center(
-          child: Text(
-            "IPhone Page",
-            style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold
-            ),
-          ),
-        ),
-      ],
+    return ListView(
+      // children: [
+      //   SizedBox(
+      //     height: 460,
+      //     width: 200,
+      //     child: Column(
+      //       children: [
+      //         Image.network(
+      //           state.products[index].image,
+      //           height: 270,
+      //           width: 200,
+      //           fit: BoxFit.fill,
+      //           filterQuality: FilterQuality.medium,
+      //         ),
+      //         Padding(
+      //           padding: const EdgeInsets.all(8.0),
+      //           child: Column(
+      //             crossAxisAlignment: CrossAxisAlignment.start,
+      //             children: [
+      //               Text(
+      //                 state.products[index].title.substring(0, 18),
+      //                 style: const TextStyle(fontWeight: FontWeight.bold),
+      //               ),
+      //               const SizedBox(
+      //                 height: 3,
+      //               ),
+      //               Text(
+      //                 state.products[index].description,
+      //                 maxLines: 3,
+      //                 overflow: TextOverflow.ellipsis,
+      //                 textAlign: TextAlign.justify,
+      //               ),
+      //               const SizedBox(
+      //                 height: 10,
+      //               ),
+      //               Text(
+      //                 "PRICE :${state.products[index].price.toString()}",
+      //                 style: const TextStyle(fontWeight: FontWeight.bold),
+      //               ),
+      //             ],
+      //           ),
+      //         )
+      //       ],
+      //     ),
+      //   ),
+      // ],
     );
   }
 }
